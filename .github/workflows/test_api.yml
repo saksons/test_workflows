@@ -32,9 +32,6 @@ jobs:
           path: ./.venv
           key: venv-${{ hashFiles('poetry.lock') }}
 
-      - name: go to workdir
-        run: cd ./api
-
       - name: Install the project dependencies
         run: poetry install -C ./api/
 

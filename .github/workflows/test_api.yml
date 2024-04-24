@@ -2,9 +2,9 @@ name: build & test API with poetry & pytest
 
 on: 
     push:
-        branches: ["api"]
+        branches: ["api", "main"]
     pull_request:
-        branches: ["main"]
+        branches: ["api"]
 
     workflow_dispatch:
       inputs:
@@ -49,14 +49,16 @@ jobs:
           path: ./.venv
           key: venv-${{ hashFiles('poetry.lock') }}
 
-      - name: go to the workdir
-        run: cd ./api/api/
+      # - name: go to the workdir
+      #   run: cd ./api/api/
 
-      - name: show dir
-        run: ls -lha
+      # - name: show dir
+      #   run: ls -lha
 
       - name: Install the project dependencies
+        working-directory: ./api/
         run: poetry install 
 
       - name: Run the automated tests
+        working-directory: ./api/
         run: poetry run pytest -v

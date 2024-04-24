@@ -53,4 +53,4 @@ jobs:
         run: poetry install -C ./api/
 
       - name: Run the automated tests
-        run: poetry run pytest -v
+        run: poetry run -C ./api/ pytest -v

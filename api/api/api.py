@@ -1,7 +1,7 @@
 import fastapi
 from fastapi.responses import Response, JSONResponse
 from fastapi.requests import Request
-from api.test_user_model import TestUserModel
+from api.user_model import UserModel
 from api.log import CustomFormatter
 import logging
 
@@ -30,7 +30,7 @@ async def main(response: Response, request: Request) -> JSONResponse:
 
 
 @app.post("/api/v1/some_func_with_data")
-async def some_func_with_data(user: TestUserModel, response: Response, request: Request) -> JSONResponse:
+async def some_func_with_data(user: UserModel, response: Response, request: Request) -> JSONResponse:
     logger.debug(f"from: [client_ip: {request.client[0]}, client_port: {request.client[1]}], to: {request.base_url._url}")
     match(user.id):
         case -1:

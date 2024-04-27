@@ -2,7 +2,7 @@ name: build & run docker container for testing api in this container
 
 on:
     push: 
-        branches: ["docker", "main", "api"]
+        branches: ["docker", "api"]
     pull_request:
         branches: ["docker"]
 
@@ -28,4 +28,4 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             
-            - uses: hoverkraft-tech/compose-action@v2
+            - uses: hoverkraft-tech/compose-action@v2.0.0

@@ -28,4 +28,4 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             
-            - uses: hoverkraft-tech/compose-action@v0.0.0
+            - uses: hoverkraft-tech/compose-action@v2

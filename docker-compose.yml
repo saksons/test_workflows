@@ -1,0 +1,8 @@
+services:
+  api-testing:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      target: testing
+    image: api-testing:latest
+    container_name: api-testing

@@ -28,14 +28,4 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             
-            - name: Install docker
-              uses: docker/setup-buildx-action@v3
-
-            - name: Updating system
-              run: apt-get update && apt-get upgrade
-
-            - name: Installing docker io & compose
-              run: apt-get install docker.io docker-compose
-
-            - name: Docker compose up
-              run: docker-compose up
+            - uses: hoverkraft-tech/compose-action@v0.0.0

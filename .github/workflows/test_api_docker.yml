@@ -2,7 +2,7 @@ name: build & run docker container for testing api in this container
 
 on:
     push: 
-        branches: ["docker", "api"]
+        branches: ["docker"]
     pull_request:
         branches: ["docker"]
 
